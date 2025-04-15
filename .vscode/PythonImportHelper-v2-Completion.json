@@ -1,0 +1,79 @@
+[
+    {
+        "label": "Utilisateur",
+        "importPath": "pyforum.utilisateur",
+        "description": "pyforum.utilisateur",
+        "isExtraImport": true,
+        "detail": "pyforum.utilisateur",
+        "documentation": {}
+    },
+    {
+        "label": "sleep",
+        "importPath": "time",
+        "description": "time",
+        "isExtraImport": true,
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "BD",
+        "importPath": "pyforum.bd",
+        "description": "pyforum.bd",
+        "isExtraImport": true,
+        "detail": "pyforum.bd",
+        "documentation": {}
+    },
+    {
+        "label": "BD",
+        "importPath": "src.pyforum.bd",
+        "description": "src.pyforum.bd",
+        "isExtraImport": true,
+        "detail": "src.pyforum.bd",
+        "documentation": {}
+    },
+    {
+        "label": "BD",
+        "kind": 6,
+        "importPath": "src.pyforum.bd",
+        "description": "src.pyforum.bd",
+        "peekOfCode": "class BD:\n    def __init__(self):\n        self.utilisateurs: list[Utilisateur] = []\n        self.forums = []\n        self.publications = []\n        self.commentaires = []\n        self.utilisateurs_forums = {}\n        print(\"Base de données initialisée.\")\n    def creer_utilisateur(self, username: str) -> Utilisateur:\n        #                       ^^^^^^^^^^^^^^",
+        "detail": "src.pyforum.bd",
+        "documentation": {}
+    },
+    {
+        "label": "Forum",
+        "kind": 6,
+        "importPath": "src.pyforum.forum",
+        "description": "src.pyforum.forum",
+        "peekOfCode": "class Forum:\n    \"\"\"\n    Représente un forum au sein de la plateforme PyForum.\n    \"\"\"\n    dernier_id = 0  # Attribut de classe pour gérer l'identifiant unique\n    def __init__(self, nom: str, auteur_id: int, description: str = \"\", bd: BD = None):\n        \"\"\"\n        Initialise une nouvelle instance de la classe Forum.\n        Args:\n            nom (str): Le nom unique du forum.",
+        "detail": "src.pyforum.forum",
+        "documentation": {}
+    },
+    {
+        "label": "afficher_menu",
+        "kind": 2,
+        "importPath": "src.pyforum.mvp",
+        "description": "src.pyforum.mvp",
+        "peekOfCode": "def afficher_menu():\n    \"\"\"Affiche les options du menu.\"\"\"\n    print(\"\\n---- Menu ----\")\n    print(\"1. Créer un utilisateur\")\n    print(\"2. Créer un forum\")\n    print(\"3. Créer une publication\")\n    print(\"4. Ajouter un commentaire à une publication\")\n    print(\"5. Joindre un forum\")\n    print(\"6. Quitter\")\ndef main():",
+        "detail": "src.pyforum.mvp",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.pyforum.mvp",
+        "description": "src.pyforum.mvp",
+        "peekOfCode": "def main():\n    # Initialisation de la base de données\n    db = BD()\n    while True:\n        afficher_menu()\n        # Demander à l'utilisateur de choisir une option\n        choix = input(\"Choisissez une option (1-6): \")\n        if choix == '1':\n            # Créer un utilisateur\n            print(\"\\nCréation d'un utilisateur...\")",
+        "detail": "src.pyforum.mvp",
+        "documentation": {}
+    },
+    {
+        "label": "Utilisateur",
+        "kind": 6,
+        "importPath": "src.pyforum.utilisateur",
+        "description": "src.pyforum.utilisateur",
+        "peekOfCode": "class Utilisateur():\n    dernier_id = 0 \n    def __init__(self, username: str, adresse_courriel: str, mot_de_passe: str, bd: BD):\n        # TODO: Ajouter les autres attributs nécessaires\n        self.id = id\n        self.username = username\n        self.adresse_courriel = adresse_courriel\n        self.mot_de_passe = mot_de_passe\n        self.forums_inscrits = []  # Liste pour stocker les instances de Forum auxquels l'utilisateur est inscrit\n        self.bd = bd",
+        "detail": "src.pyforum.utilisateur",
+        "documentation": {}
+    }
+]
