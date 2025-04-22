@@ -9,9 +9,9 @@ class Utilisateur():
         self.username = username
         self.adresse_courriel = adresse_courriel
         self.mot_de_passe = mot_de_passe
-        self.forums_inscrits = []  # Liste pour stocker les instances de Forum auxquels l'utilisateur est inscrit
+        self.forums_inscrits = [] 
         self.bd = bd
-        self.bd.sauvegarder_utilisateur(self) # Simuler la sauvegarde lors de la création
+        self.bd.sauvegarder_utilisateur(self) 
 
     def __str__(self):
         return f"Utilisateur(id={self.id}, nom_utilisateur='{self.nom_utilisateur}', courriel='{self.adresse_courriel}')"
@@ -25,7 +25,8 @@ class Utilisateur():
         """
         if forum not in self.forums_inscrits:
             self.forums_inscrits.append(forum)
-            self.bd.ajouter_utilisateur_au_forum(self.id, forum.id) # Simuler l'ajout dans la BD
+            "enregistrement dans la base de données"
+            self.bd.ajouter_utilisateur_au_forum(self.id, forum.id) 
             print(f"L'utilisateur '{self.nom_utilisateur}' a rejoint le forum '{forum.nom}'.")
         else:
             print(f"L'utilisateur '{self.nom_utilisateur}' est déjà inscrit au forum '{forum.nom}'.")

@@ -1,5 +1,5 @@
 from pyforum.utilisateur import Utilisateur
-
+from src.pyforum.bd import BD
 
 class BD:
     def __init__(self):
@@ -10,14 +10,17 @@ class BD:
         self.utilisateurs_forums = {}
         print("Base de données initialisée.")
 
-    def creer_utilisateur(self, username: str) -> Utilisateur:
+    def creer_utilisateur(self, username: str,adresse_courriel: str, mot_de_passe: str,bd: BD) -> Utilisateur:
         #                       ^^^^^^^^^^^^^^
         #            # TODO:    Vous devez ajouter les autres paramètres requis
 
         # Vérifier si l'utilisateur existe déjà
         if username in [u.username for u in self.utilisateurs]:
             print(f"[Simulé] L'utilisateur {username} existe déjà.")
-            return
+            return None
+        if adresse_courriel in [u.adresse_courriel for u in self.utilisateurs]:
+            print(f"[Simulé] L'adresse courriel {adresse_courriel} est déjà utilisée.")
+            return None 
 
         # Créer un nouvel identifiant pour l'utilisateur
         new_id = max([u.id for u in self.utilisateurs], default=0) + 1
