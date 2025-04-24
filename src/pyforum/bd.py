@@ -33,7 +33,7 @@ class BD:
         self.commentaires: list[Commentaire] = self._charger_commentaires()
         self.utilisateurs_forums: dict[int, list[int]] = self._charger_utilisateurs_forums()
         print("Base de données initialisée.")
-        
+    
         
     def __init__(self):
         self.utilisateurs: list[Utilisateur] = []
