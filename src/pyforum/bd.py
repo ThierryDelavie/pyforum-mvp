@@ -33,8 +33,8 @@ class BD:
         self.commentaires: list[Commentaire] = self._charger_commentaires()
         self.utilisateurs_forums: dict[int, list[int]] = self._charger_utilisateurs_forums()
         print("Base de données initialisée.")
-
-class BD:
+        
+        
     def __init__(self):
         self.utilisateurs: list[Utilisateur] = []
         self.forums = []
@@ -42,6 +42,7 @@ class BD:
         self.commentaires = []
         self.utilisateurs_forums = {}
         print("Base de données initialisée.")
+        
 
     def creer_utilisateur(self, username: str,adresse_courriel: str, mot_de_passe: str,bd: BD) :
         #                       ^^^^^^^^^^^^^^
@@ -65,11 +66,13 @@ class BD:
 
         # Retourner l'utilisateur créé
         return u
+    
 
     def obtenir_utilisateur_par_nom(self, nom_utilisateur: str):
         for u in self.utilisateurs:
             if u.username == nom_utilisateur:
                 return u
+            
 
     def creer_forum(self, nom, auteur_id, description=""):
         #                ^^^^^^
@@ -92,6 +95,8 @@ class BD:
                 print(f"Erreur de décodage JSON dans {self.Forums_file}.")
         return forums
 
+
+
     def creer_publication(self, publication:str,titre:str,contenu:str, auteur_id:int, forum_id:int):
         #                       ^^^^^^^^^^^
         #                       Vous devez ajouter les autres paramètres requis
@@ -103,6 +108,7 @@ class BD:
         self._sauvegarder_publications()
         print(f"[Simulé] Sauvegarde de la publication: {publication}")
         return publication
+
 
     def creer_commentaire(self, commentaire: bool, auteur_id:int, contenu:str, publication_id:int): 
         #                       ^^^^^^^^^^^
@@ -116,6 +122,7 @@ class BD:
         print(f"[Simulé] Sauvegarde du commentaire: {commentaire}")
         return commentaire
     
+    
     # TODO: Implanter la logique pour chercher un forum à partir de son nom
     def obtenir_forum_par_nom(self, nom_forum):
         
@@ -123,6 +130,8 @@ class BD:
             if forum.nom == nom_forum:
                 return forum
         return None
+    
+    
 # TODO: Implanter la logique pour chercher une publication à partir de son titre
     def obtenir_publication_par_titre(self, titre_publication):
         
@@ -130,6 +139,8 @@ class BD:
             if pub.titre == titre_publication:
                 return pub
         return None
+
+
 
     def mettre_a_jour_forum(self, forum: Forum, nom: str, description: str):
         #                         ^^^^^^
