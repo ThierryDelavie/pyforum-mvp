@@ -6,7 +6,7 @@ import csv
 import os
 from pyforum.utilisateur import Utilisateur
 from pyforum.forum import Forum
-from pyforum.publication import Publication 
+from pyforum.publication import Publication  # Ensure Publication is a class, not a module
 from pyforum.commentaire import Commentaire
 "from pyforum-mvp.src.pyforum import forum"
 
