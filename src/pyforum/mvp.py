@@ -134,3 +134,5 @@ def main():
             print("Option invalide. Veuillez essayer à nouveau.")
 
         sleep(1)  # Pause de 1 secondes pour rendre l'interface plus agréable
+
+
